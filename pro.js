@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-var prefix=`!`
+var prefix=`-`
 const moment = require('moment');
 const fs = require('fs');
 var version = '11.0.0';
@@ -425,7 +425,7 @@ var prefix =`!`;
     fs.writeFile('./walls.json', JSON.stringify(dataPro), (err) => {
      if(err) console.log(err.message);
  })
-    if(message.content.startsWith(prefix + 'profile')) {
+    if(message.content.startsWith(prefix + "profile")) {
          if(!message.channel.guild) return message.reply('** This command only for servers**');
      var ment = message.mentions.users.first();
       var getvalueof;
@@ -510,8 +510,8 @@ const w = ['./img/wall.png'];
                       ctx.font = "17px Cairo";
                       ctx.fontSize = "12px";
                       ctx.fillStyle = "#FFFFFF";
-                      ctx.textAlign = "left";
-                      ctx.fetchObject(`message_${getvalueof.id}`).then(i => {
+                      ctx.textAlign = "left"; 
+                      ctx.fillText(`message_${getvalueof.id}`).then(i => {
 
                           if (!i.text){
                               i.text = "Try .setinfo";
